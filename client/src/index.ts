@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { program } from "commander";
-import validateConfig from "./util/validateConfig.js";
+import validateConfig from "./util/config/validateConfig.js";
 import "./util/commandGrouper.js";
 
 program.version("0.0.1")

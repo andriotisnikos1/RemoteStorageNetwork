@@ -25,7 +25,7 @@ async function action() {
         pingSpinner.start(`Pinging ${String(networkHost)}...`)
         const {data: {authAcceptable}} = await axios.get<Ping>(`http://${String(networkHost)}/auth/ping`)
         if (!authAcceptable) {
-            pingSpinner.stop("This server has disabled authentication", 1)
+            pingSpinner.stop("This node has disabled authentication", 1)
             return;
         }
         pingSpinner.stop("Authentication is enabled! Proceeding as usual...", 0)
@@ -54,6 +54,14 @@ async function action() {
             }
         })
         loginSpinner.stop("Logged in!", 0)
+        const alias = String(await text({
+            message: "Finally, what's the alias of this node?",
+            validate: (input: string) => {
+                if (!input) return "Please provide a valid alias";
+                return;
+            },
+            placeholder: "My Node",
+        }))
         console.log(token)
     } catch (error) {
         console.log("Error:", error)
