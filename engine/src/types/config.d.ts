@@ -12,5 +12,6 @@ export interface Config {
     auth?: {
         username: string;
         password: string;
-    }
+    };
+    disableAuthentication?: boolean;
 }

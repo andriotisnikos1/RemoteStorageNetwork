@@ -9,6 +9,7 @@ export async function parseConfigFile() {
         if (!parsedConfig.mongodb.url && !parsedConfig.mongodb.credentials) console.log("No mongodb url or valid credentials provided in config.json");
         if (!parsedConfig.port) console.log(JSON.stringify({type: "warning", message: "No port provided in config.json, using default port 1787"}));
         if (!parsedConfig.auth) console.log(JSON.stringify({type: "warning", message: "No auth provided in config.json, using default auth username: admin, password: admin"}));
+        if (parsedConfig.disableAuthentication) console.log(JSON.stringify({type: "warning", message: "Authentication is disabled in config.json. You can no longer add more users."}));
 
         return parsedConfig
     } catch (error) {
