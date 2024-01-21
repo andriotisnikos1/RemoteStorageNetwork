@@ -8,12 +8,10 @@ export default async function connectMongoDB() {
         const db = client.db("rns");
         return db;
     } catch (error) {
-        const err = error as mongodb.MongoError;
         console.log(JSON.stringify({
-            message: err.message,
-            code: err.code,
-            name: err.name,
-            stack: err.stack
+            type: "error",
+            message: "Error connecting to mongodb",
         }))
+        process.exit(1);
     }
 }

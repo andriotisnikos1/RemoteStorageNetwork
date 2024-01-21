@@ -1,0 +1,9 @@
+{
+    "mongodb": {
+        "url": "mongodb://admin:secret@localhost:27018"
+    },
+    "auth": {
+        "username": "nikos",
+        "password": "secret"
+    }
+}

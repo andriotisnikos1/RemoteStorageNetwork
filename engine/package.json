@@ -3,10 +3,12 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "helmet": "^7.1.0",
-    "mongodb": "^6.3.0"
+    "mongodb": "^6.3.0",
+    "node-cache": "^5.1.2"
   },
   "scripts": {
-    "start": "tsc && node ./dist/index.js"
+    "start": "tsc && node ./dist/index.js",
+    "dev": "nodemon --watch src --exec bun ./src/index.ts"
   },
   "type": "module",
   "devDependencies": {

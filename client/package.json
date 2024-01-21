@@ -1,0 +1,12 @@
+{
+  "name": "rsn-cli",
+  "dependencies": { "@clack/prompts": "^0.7.0", "axios": "^1.6.5", "commander": "^11.1.0" },
+  "main": "./dist/index.js",
+  "bin": {
+    "rsn": "./dist/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "typescript": "^5.3.3"
+  }
+}
